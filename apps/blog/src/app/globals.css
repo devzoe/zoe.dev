@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS 변수 설정 */
+:root[color-theme='light'] {
+  --fill-primary: #ffffff;
+  --fill-secondary: #000000;
+}
+
+:root[color-theme='dark'] {
+  --fill-primary: #000000;
+  --fill-secondary: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
